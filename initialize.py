@@ -25,7 +25,7 @@ print('Living on the edge!  Dropping the current database tables.')
 with connection.cursor() as cursor:
     cursor.execute("DROP SCHEMA public CASCADE")
     cursor.execute("CREATE SCHEMA public")
-    cursor.execute("GRANT ALL ON SCHEMA public TO postgres")
+    cursor.execute("GRANT ALL ON SCHEMA public TO " + os.environ['BLOG_DATABASE_USER'])
     cursor.execute("GRANT ALL ON SCHEMA public TO public")
 
 # make the migrations and migrate
