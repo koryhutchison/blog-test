@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Log in</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+      *, ::after, ::before {
+        box-sizing: border-box;
+      }
+      html,body {
+        font-family: 'Roboto', sans-serif;
+        color: rgba(0,0,0,.87);
+        height: 100%;
+        width: 100%;
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      form {
+        width: 400px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      form h1 {
+        text-align: center;
+      }
+
+      input:not([type="submit"]) {
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+        border: solid #ced4da 1px;
+        padding: 10px;
+        font-size: 1rem;
+        margin-bottom: 15px;
+      }
+
+      input:not([type="Submit"]):focus {
+        outline: none;
+        box-shadow: 0px 0px 2px blue;
+      }
+
+      .submit-btn {
+        padding: 10px 12px;
+        font-size: 1rem;
+        display: block;
+        margin: auto;
+        background-color: #6666ff;
+        color: #FFF;
+        border-radius: 5px;
+        border: 0;
+        transition: background .5s ease 0s;
+      }
+
+      .submit-btn:hover {
+        cursor: pointer;
+        background-color: #3333ff;
+      }
+
+    </style>
+  </head>
+  <body>
+    <form method="POST">
+      <h1>Log in</h1>
+      {% csrf_token %}
+      {{ form }}
+      <input class="submit-btn" type="submit" value="Log in" />
+    </form>
+  </body>
+</html>
